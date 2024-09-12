@@ -11,33 +11,34 @@ struct ContentView: View {
     @State private var outputText: String = ""
     
     var body: some View {
-        VStack(spacing: 20) { // Apila los elementos verticalmente
-            Text(message) // Muestra el mensaje actual
-                .font(.largeTitle) // Tamaño de la fuente
-                .padding() // Agrega espacio alrededor del texto
-            
-            TextField("¿Que te gustaría aprender?", text: $inputText)
-                .padding()
-                .border(Color.gray, width: 1)
-                .padding()
-            
+         // Apila los elementos verticalmente
+        VStack(spacing: 20) {
+
             Button(action: {
-                outputText = "Será un placer ayudarte con el tema de " + inputText
-            }){
-                Text("Buscar") // Texto del botón
-                    .font(.title) // Tamaño de la fuente
-                    .padding() // Agrega espacio alrededor del texto
-                    .background(Color.blue) // Fondo azul
-                    .foregroundColor(.white) // Texto blanco
+                // Acción a realizar cuando se presiona el botón
+                buttonText = "¡Botón de agregar presionado!"
+            }) {
+                Text("Agregar Notas")
+                    .font(.title)
+                    .padding()
+                    .background(Color.blue)
+                    .foregroundColor(.white)
                     .cornerRadius(10)
             }
-            
-            Text(outputText)
-                .font(.title2) // Tamaño del texto
-                .padding() // Agrega espacio alrededor del texto
-                .foregroundColor(.black) // Color de texto negro
+
+            Button(action: {
+                // Acción a realizar cuando se presiona el botón
+                buttonText = "¡Botón de repasar presionado!"
+            }) {
+                Text("Repasar")
+                    .font(.title)
+                    .padding()
+                    .background(Color.green)
+                    .foregroundColor(.white)
+                    .cornerRadius(10)
             }
-            .padding()
-        }
+
+        }.padding()
     }
+}
 
